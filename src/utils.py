@@ -55,7 +55,7 @@ data_transaction = getting_data_account(json_file_path)
 
 def get_greeting(time: datetime) -> str:
     """Возвращает приветствие в зависимости от времени дня"""
-    logger.info("Извлекаем часовой компонент из заданного времени и сохраням его в отдельной переменной")
+    logger.info("Извлекаем часовой компонент из заданного времени и сохраняем его в отдельной переменной")
     hour = time.hour
 
     logger.info("Проверяем в каком промежутке времени находится заданный часа времени для корректного приветствия")
@@ -70,7 +70,7 @@ def get_greeting(time: datetime) -> str:
 
 
 def get_response(date_time_str: str) -> str:
-    """Главная функция, которая передает указаннаю дату и возвращает привествие"""
+    """Главная функция, которая передает указанную дату и возвращает приветствие"""
     logger.info("Выводим приветствие в зависимости от заданного времени")
     greeting = get_greeting(datetime.strptime(date_time_str, "%d-%m-%Y %H:%M:%S"))
     return greeting
@@ -78,7 +78,7 @@ def get_response(date_time_str: str) -> str:
 
 def filter_by_period(data: list[dict], date_string: str) -> list[dict]:
     """Функция, которая фильтрует список словарей за период с начала месяца до указанной даты"""
-    logger.info("Переводим заданную дату из типа даных str в формат datetime")
+    logger.info("Переводим заданную дату из типа данных str в формат datetime")
     dt = datetime.strptime(date_string, "%d-%m-%Y %H:%M:%S")
 
     logger.info("Устанавливаем первое число месяца в полученной дате")
@@ -145,7 +145,7 @@ def information_cards(transactions: list[dict]) -> list[dict[str, int | str | An
 
 
 def getting_top_specified_period(data: list[dict]) -> list[dict]:
-    """Фукнция, котораая возвращает топ-5 транзакций по сумме платежа"""
+    """Функция, которая возвращает топ-5 транзакций по сумме платежа"""
     logger.info("Преобразовываем список словарей в DataFrame")
     pd_data = pd.DataFrame(data)
 
